@@ -14,12 +14,13 @@ const Dashboard = () => {
                 <title>Livro - Profile</title>
             </Head>
 
-            <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
-                            You're logged in!
-                        </div>
+            <div className="flex flex-row content-center pt-3 pl-2">
+                <div id="about">
+                    <div className="flex flex-row"> 
+                        <img class="inline object-cover w-75 h-75 mr-2 rounded-full" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/e/ef/Garruk%2C_Unleashed_2.jpg/revision/latest?cb=20200828180739" alt="Profile image"/>
+                    </div>
+                    <div className="flex flex-row">
+                        <span>Callum Gill</span> <a href="#" className="text-sm underline ml-3">(Edit Profile)</a>
                     </div>
                 </div>
             </div>
