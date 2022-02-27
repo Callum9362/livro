@@ -17,7 +17,7 @@ const Dashboard = () => {
             <main className="profile-page">
                 <section className="relative block" style={{ height: "500px" }}>
                     <div className="absolute top-0 w-full h-full bg-center bg-cover">
-                        <span id="blackOverlay" className="w-full h-full absolute opacity-50 bg-black"></span>
+                        <span id="blackOverlay" className="w-full h-full absolute opacity-50"></span>
                     </div>
                     <div className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden" style={{ height: "70px" }}>
                         <svg className="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100"x="0" y="0">
@@ -100,14 +100,14 @@ const Dashboard = () => {
                                 <div className="mt-5 py-10 border-t border-gray-300 text-center">
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full lg:w-9/12 px-4">
-                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Reading Lists </p>
+                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Currently Reading </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mt-5 py-10 border-t border-gray-300 text-center">
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full lg:w-9/12 px-4">
-                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Currently Reading </p>
+                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Want to Read </p>
                                         </div>
                                     </div>
                                 </div>
