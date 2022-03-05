@@ -41,4 +41,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Create the connection from User to User Profile
+     * It is a one to one relationship see https://laravel.com/docs/9.x/eloquent-relationships#one-to-one
+     */
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class);
+    }
 }
+
