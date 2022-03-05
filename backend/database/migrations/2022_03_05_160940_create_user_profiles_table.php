@@ -18,16 +18,16 @@ class CreateUserProfilesTable extends Migration
         Schema::create('user_profiles', function (Blueprint $table) {
             
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->text('bio');
-            $table->string('location');
-            $table->string('picture');
-            $table->string('pronoun');
-            $table->date('dob');
-            $table->string('website');
-            $table->string('twitter');
-            $table->text('interests');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('location')->nullable();
+            $table->string('picture')->nullable();
+            $table->string('pronoun')->nullable();
+            $table->date('dob')->nullable();
+            $table->string('website')->nullable();
+            $table->string('twitter')->nullable();
+            $table->text('interests')->nullable();
             $table->timestamps();
             
             // Reference a foreign key

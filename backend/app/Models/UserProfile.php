@@ -10,6 +10,15 @@ class UserProfile extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'user_id'
+    ];
+
+    /**
      * Create the connection from User profile to User 
      * It is a one to one relationship see https://laravel.com/docs/9.x/eloquent-relationships#one-to-one
      */
