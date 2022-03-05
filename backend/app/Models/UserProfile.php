@@ -19,6 +19,21 @@ class UserProfile extends Model
     ];
 
     /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'dob',
+        'updated_at'
+    ];
+
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
+
+    /**
      * Create the connection from User profile to User 
      * It is a one to one relationship see https://laravel.com/docs/9.x/eloquent-relationships#one-to-one
      */

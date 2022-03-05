@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreUserProfileRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
 use App\Models\UserProfile;
+use App\Models\User;
+use Illuminate\Http\Request;
 
 class UserProfileController extends Controller
 {
@@ -45,9 +47,10 @@ class UserProfileController extends Controller
      * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function show(UserProfile $userProfile)
+    public function show(Request $request, $username)
     {
-        //
+        $user = User::where('username', $username)->first();
+        return $user->profile;
     }
 
     /**

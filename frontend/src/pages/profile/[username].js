@@ -1,12 +1,18 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+import { useAuth } from '@/hooks/auth'
 
 const Dashboard = () => {
+    const { user } = useAuth({ middleware: 'auth' })
+    const router = useRouter()
+    const { username } = router.query
+
     return (
         <AppLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard
+                    Dashboard of { user?.username }
                 </h2>
             }>
 
