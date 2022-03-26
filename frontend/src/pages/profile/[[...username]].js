@@ -2,6 +2,7 @@ import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/auth'
+import { BsGlobe } from "react-icons/bs"
 
 const Dashboard = ({ profileInfo }) => {
     const { user } = useAuth({ middleware: 'auth' })
@@ -60,7 +61,7 @@ const Dashboard = ({ profileInfo }) => {
                                                 type="button"
                                                 style={{ transition: "all .15s ease" }}
                                             >
-                                                Website
+                                               <BsGlobe className="inline" /> Website
                                             </a>
                                         </div>
                                     </div>
