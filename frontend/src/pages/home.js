@@ -50,7 +50,7 @@ const Home = ({ users }) => {
 
 export async function getServerSideProps()
 {
-    const result = await fetch('http://localhost:8000/api/profile');
+    const result = await fetch('http://localhost:8000/api/profile?limit=5');
     const userProfiles = await result.json();
     return {
         props: {

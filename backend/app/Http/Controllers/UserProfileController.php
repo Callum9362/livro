@@ -15,9 +15,9 @@ class UserProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return UserProfile::with('user')->latest()->limit(25)->get();
+        return UserProfile::with('user')->latest()->limit($request->get('limit'))->get();
     }
 
     /**
