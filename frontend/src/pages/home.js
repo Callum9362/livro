@@ -37,7 +37,7 @@ const Home = ({ users }) => {
                         <LatestUsers users={users}/>
                     </div>
                 </div>
-                <div id="right-column" class="basis-3/4">
+                <div id="right-column" className="basis-3/4">
                     <h6 className="text-center">Your Feed</h6>
                     <div id="feed" className="pt-3 text-center">
                         <span>The feed will go here. It will contain updates from authors, book release dates, changes to lists you follow</span>
