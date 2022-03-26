@@ -17,7 +17,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        //
+        return UserProfile::latest()->limit(25)->get();
     }
 
     /**

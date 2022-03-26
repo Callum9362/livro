@@ -20,5 +20,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::prefix('profile')->name('profile.')->group( function () {
+    Route::get('', [UserProfileController::class, 'index'])->name('index');
     Route::get('{username:username}', [UserProfileController::class, 'show'])->name('show');
+
+    
 });
