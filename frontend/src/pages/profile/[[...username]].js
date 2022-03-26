@@ -3,16 +3,15 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useAuth } from '@/hooks/auth'
 
-const Dashboard = () => {
+const Dashboard = ({ profileInfo }) => {
     const { user } = useAuth({ middleware: 'auth' })
     const router = useRouter()
     const { username } = router.query
-
     return (
         <AppLayout
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Dashboard of { user?.username }
+                    Dashboard of { profileInfo?.first_name }
                 </h2>
             }>
 
@@ -131,6 +130,18 @@ const Dashboard = () => {
             </main> 
         </AppLayout>
     )
+}
+
+export async function getServerSideProps(context)
+{
+    const { username } = context.query
+    const result = await fetch(`http://localhost:8000/api/profile/${username}`);
+    const profile = await result.json();
+    return {
+        props: {
+            profileInfo: profile
+        }
+    }
 }
 
 export default Dashboard
