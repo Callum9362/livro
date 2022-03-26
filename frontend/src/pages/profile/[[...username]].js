@@ -39,7 +39,7 @@ const Dashboard = ({ profileInfo }) => {
                                         <div className="relative">
                                             <img
                                                 alt="..."
-                                                src="https://i.ebayimg.com/images/g/wIEAAOSwcXBbNrM5/s-l1600.jpg"
+                                                src={ profileInfo?.picture }
                                                 className="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16"
                                                 style={{ maxWidth: "150px" }}
                                             />
@@ -54,6 +54,14 @@ const Dashboard = ({ profileInfo }) => {
                                             >
                                                 Follow
                                             </button>
+                                            <a
+                                                href={  profileInfo?.website }
+                                                className="bg-blue-500 active:bg-blue-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
+                                                type="button"
+                                                style={{ transition: "all .15s ease" }}
+                                            >
+                                                Website
+                                            </a>
                                         </div>
                                     </div>
                                     <div className="w-full lg:w-4/12 px-4 lg:order-1">
@@ -81,23 +89,19 @@ const Dashboard = ({ profileInfo }) => {
                                 </div>
                                 <div className="text-center mt-12">
                                     <h3 className="text-4xl font-semibold leading-normal mb-2 text-gray-800 mb-2">
-                                        Callum Gill
+                                            { profileInfo?.first_name + " " + profileInfo?.last_name } <span className="text-gray-500 text-lg">({ profileInfo?.pronoun }) </span>  
                                     </h3>
                                     <div className="text-sm leading-normal mt-0 mb-2 text-gray-500 font-bold uppercase">
                                         <i className="fas fa-map-marker-alt mr-2 text-lg text-gray-500"></i>{" "}
-                                        Oregon, United States
+                                            { profileInfo?.location }
                                     </div>
                                 </div>
                                 <div className="mt-5 py-10 border-t border-gray-300 text-center">
                                     <div className="flex flex-wrap justify-center">
                                         <div className="w-full lg:w-9/12 px-4">
-                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Summary </p>
+                                            <p className="mb-4 text-lg leading-relaxed text-gray-800"> Bio </p>
                                             <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                                                An software developer of considerable range, Callum the name taken by
-                                                Cornwall-raised, Oregon-based Jessie James writes,
-                                                designs and develops all of his own software, giving it a
-                                                warm, intimate feel with a solid groove structure. A
-                                                developer of considerable range.
+                                               { profileInfo?.bio }
                                             </p>
                                         </div>
                                     </div>
