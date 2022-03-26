@@ -1,7 +1,8 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
+import LatestUsers from '@/components/LatestUsers'
 
-const Home = () => {
+const Home = ({ users }) => {
     return (
         <AppLayout>
 
@@ -32,6 +33,9 @@ const Home = () => {
                             <span className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">Recommendations</span>
                         </div>
                     </div>
+                    <div>
+                        <LatestUsers users={users}/>
+                    </div>
                 </div>
                 <div id="right-column" class="basis-3/4">
                     <h6 className="text-center">Your Feed</h6>
@@ -42,6 +46,17 @@ const Home = () => {
             </div>
         </AppLayout>
     )
+}
+
+export async function getServerSideProps()
+{
+    const result = await fetch('http://localhost:8000/api/profile');
+    const userProfiles = await result.json();
+    return {
+        props: {
+            users: userProfiles
+        }
+    }
 }
 
 export default Home
