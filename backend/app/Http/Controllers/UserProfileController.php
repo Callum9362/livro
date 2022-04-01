@@ -71,9 +71,21 @@ class UserProfileController extends Controller
      * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserProfileRequest $request, UserProfile $userProfile)
+    public function update(Request $request, $username)
     {
-        //
+        //TODO: Add in some validation ? Or is this done frontend??
+
+        $user = User::where('username', $username)->first();
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->bio = $request->get('bio');
+        $user->location = $request->get('location');
+        $user->interests = $request->get('interests');
+        $user->pronoun = $request->get('pronoun');
+        $user->dob = $request->get('dob');
+        $user->website = $request->get('website');
+        $user->twitter = $request->get('twitter');
+        return $user->profile;
     }
 
     /**
