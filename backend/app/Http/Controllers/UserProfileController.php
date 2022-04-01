@@ -85,6 +85,7 @@ class UserProfileController extends Controller
         $user->dob = $request->get('dob');
         $user->website = $request->get('website');
         $user->twitter = $request->get('twitter');
+        
         return $user->profile;
     }
 
