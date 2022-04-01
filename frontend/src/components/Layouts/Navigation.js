@@ -38,11 +38,6 @@ const Navigation = ({ user }) => {
                                 Home
                             </NavLink>
                             <NavLink
-                                href="/dashboard"
-                                active={router.pathname === '/dashboard'}>
-                                Dashboard
-                            </NavLink>
-                            <NavLink
                                 href="/books"
                                 active={router.pathname === '/books'}>
                                 My Books
