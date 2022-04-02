@@ -5,9 +5,11 @@ import { useAuth } from '@/hooks/auth'
 import { BsGlobe } from "react-icons/bs"
 
 const Dashboard = ({ profileInfo }) => {
+    
     const { user } = useAuth({ middleware: 'auth' })
     const router = useRouter()
-    const { username } = router.query
+    const { username } = router.query || user.username
+    
     return (
         <AppLayout
             header={

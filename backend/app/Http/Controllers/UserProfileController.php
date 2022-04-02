@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserProfileRequest;
 use App\Models\UserProfile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Facade\Auth;
 
 class UserProfileController extends Controller
 {
@@ -71,22 +72,21 @@ class UserProfileController extends Controller
      * @param  \App\Models\UserProfile  $userProfile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $username)
+    public function update(UpdateUserProfileRequest $request, UserProfile $userProfile)
     {
         //TODO: Add in some validation ? Or is this done frontend??
-
-        $user = User::where('username', $username)->first();
-        $user->first_name = $request->get('first_name');
-        $user->last_name = $request->get('last_name');
-        $user->bio = $request->get('bio');
-        $user->location = $request->get('location');
-        $user->interests = $request->get('interests');
-        $user->pronoun = $request->get('pronoun');
-        $user->dob = $request->get('dob');
-        $user->website = $request->get('website');
-        $user->twitter = $request->get('twitter');
+        dd($request->all());
+        $userProfile->first_name = $request->get('first_name');
+        $userProfile->last_name = $request->get('last_name');
+        $userProfile->bio = $request->get('bio');
+        $userProfile->location = $request->get('location');
+        $userProfile->interests = $request->get('interests');
+        $userProfile->pronoun = $request->get('pronoun');
+        $userProfile->dob = $request->get('dob');
+        $userProfile->website = $request->get('website');
+        $userProfile->twitter = $request->get('twitter');
         
-        return $user->profile;
+        return $userProfile->save();
     }
 
     /**

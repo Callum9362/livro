@@ -40,14 +40,7 @@ const Login = () => {
 
     return (
         <GuestLayout>
-            <AuthCard
-                logo={
-                    <Link href="/">
-                        <a>
-                            <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                        </a>
-                    </Link>
-                }>
+            <AuthCard>
 
                 {/* Session Status */}
                 <AuthSessionStatus className="mb-4" status={status} />
