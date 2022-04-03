@@ -23,8 +23,6 @@ class UpdateUserProfileRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        return [];
     }
 }

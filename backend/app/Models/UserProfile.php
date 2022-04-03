@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class UserProfile extends Model
 {
@@ -16,7 +15,15 @@ class UserProfile extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id'
+        'user_id',
+        'first_name',
+        'last_name',
+        'bio',
+        'location',
+        'interests',
+        'pronoun',
+        'website',
+        'twitter',
     ];
 
     /**
@@ -29,13 +36,8 @@ class UserProfile extends Model
         'updated_at'
     ];
 
-    public function getRouteKeyName()
-    {
-        return 'username';
-    }
-
     /**
-     * Create the connection from User profile to User 
+     * Create the connection from User profile to User
      * It is a one to one relationship see https://laravel.com/docs/9.x/eloquent-relationships#one-to-one
      */
     public function user()
