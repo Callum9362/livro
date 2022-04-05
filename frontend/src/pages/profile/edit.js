@@ -83,15 +83,15 @@ const EditProfile = () =>
                 <title>Edit My Profile</title>
             </Head>
 
-            <div className="w-full md:w-3/5 p-8 bg-white lg:ml-4 shadow-md">
+            <div className="mt-5 self-center w-full md:w-3/5 p-8 bg-white lg:ml-4 shadow-md content-center rounded">
                 <form onSubmit={editProfile}>
-                    <div className="rounded  shadow p-6">
+                    <div className="rounded shadow p-6">
 
                         {/* First Name */}
                         <div className="pb-6 flex">
-                            <label htmlFor="first-name" className="font-semibold text-gray-700 w-1/5">First Name</label>
+                            <label htmlFor="first-name" className="font-semibold text-gray-700 w-1/5 pt-3">First Name</label>
                             <input id="first-name"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={firstName}
                                 onChange={e => setFirstName(e.target.value)} />
@@ -99,9 +99,9 @@ const EditProfile = () =>
 
                         {/* Last Name */}
                         <div className="pb-6 flex">
-                            <label htmlFor="last-name" className="font-semibold text-gray-700 w-1/5">Last Name</label>
+                            <label htmlFor="last-name" className="font-semibold text-gray-700 w-1/5 pt-3">Last Name</label>
                             <input id="last-name"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={lastName}
                                 onChange={e => setLastName(e.target.value)} />
@@ -109,19 +109,19 @@ const EditProfile = () =>
 
                         {/* Bio */}
                         <div className="pb-6 flex">
-                            <label htmlFor="bio" className="font-semibold text-gray-700 w-1/5">Bio</label>
+                            <label htmlFor="bio" className="font-semibold text-gray-700 w-1/5 pt-3">Bio</label>
                             <textarea id="bio"
                                 rows={4}
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 value={bio}
                                 onChange={e => setBio(e.target.value)} />
                         </div>
 
                         {/* Location */}
                         <div className="pb-6 flex">
-                            <label htmlFor="location" className="font-semibold text-gray-700 w-1/5">Location</label>
+                            <label htmlFor="location" className="font-semibold text-gray-700 w-1/5 pt-3">Location</label>
                             <input id="location"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={location}
                                 onChange={e => setLocation(e.target.value)} />
@@ -129,9 +129,9 @@ const EditProfile = () =>
 
                         {/* Interests */}
                         <div className="pb-6 flex">
-                            <label htmlFor="interests" className="font-semibold text-gray-700 w-1/5">Interests</label>
+                            <label htmlFor="interests" className="font-semibold text-gray-700 w-1/5 pt-3">Interests</label>
                             <input id="interests"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={interests}
                                 onChange={e => setInterests(e.target.value)} />
@@ -139,9 +139,9 @@ const EditProfile = () =>
 
                         {/* Pronoun */}
                         <div className="pb-6 flex">
-                            <label htmlFor="pronoun" className="font-semibold text-gray-700 w-1/5">Pronoun</label>
+                            <label htmlFor="pronoun" className="font-semibold text-gray-700 w-1/5 pt-3">Pronoun</label>
                             <input id="pronoun"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={pronoun}
                                 onChange={e => setPronoun(e.target.value)} />
@@ -149,9 +149,9 @@ const EditProfile = () =>
 
                         {/* Website */}
                         <div className="pb-6 flex">
-                            <label htmlFor="website" className="font-semibold text-gray-700 w-1/5">Website</label>
+                            <label htmlFor="website" className="font-semibold text-gray-700 w-1/5 pt-3">Website</label>
                             <input id="website"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text"
                                 value={website}
                                 onChange={e => setWebsite(e.target.value)} />
@@ -159,16 +159,16 @@ const EditProfile = () =>
 
                         {/* Twitter */}
                         <div className="pb-6 flex">
-                            <label htmlFor="twitter" className="font-semibold text-gray-700 w-1/5">Twitter</label>
+                            <label htmlFor="twitter" className="font-semibold text-gray-700 w-1/5 pt-3">Twitter</label>
                             <input id="twitter"
-                                className="border-1 rounded-r px-4 py-2 w-4/5"
+                                className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                                 type="text" value={twitter}
                                 onChange={e => setTwitter(e.target.value)} />
                         </div>
 
                     </div>
                     <button type="submit"
-                        className="bg-green-500 border-2 border-solid rounded-lg border-green-900 ml-auto block mt-2 p-4">Save Changes</button>
+                        className="mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ml-auto block">Save Changes</button>
                 </form>
             </div>
         </AppLayout>
