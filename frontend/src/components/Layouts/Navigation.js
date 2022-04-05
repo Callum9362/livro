@@ -48,6 +48,11 @@ const Navigation = ({ user }) => {
                                 active={router.pathname === '/discover'}>
                                 Discover
                             </NavLink>
+                            <NavLink
+                                href="/profile"
+                                active={router.pathname === '/profile'}>
+                                My Profile
+                            </NavLink>
                         </div>
                     </div>
                     
