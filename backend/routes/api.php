@@ -19,8 +19,14 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('profile')->name('profile.')->group( function () {
+Route::prefix('profile')->name('profile.')->group(function () {
+
+    // Get all the profiles
     Route::get('', [UserProfileController::class, 'index'])->name('index');
+
+    // Get profile for user
     Route::get('{username:username}', [UserProfileController::class, 'show'])->name('show');
-    Route::post('edit/{username:username}', [UserProfileController::class, 'update'])->name('update');
+
+    // Edit a given profile
+    Route::post('edit/{profile}', [UserProfileController::class, 'update'])->name('update');
 });

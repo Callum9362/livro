@@ -54,49 +54,22 @@ class UserProfileController extends Controller
         return $user->profile;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\UserProfile  $userProfile
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserProfile $userProfile)
+    public function update(UpdateUserProfileRequest $request, UserProfile $profile)
     {
-        //
-    }
+        $profile->update($request->all());
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateUserProfileRequest  $request
-     * @param  \App\Models\UserProfile  $userProfile
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateUserProfileRequest $request, UserProfile $userProfile)
-    {
-        //TODO: Add in some validation ? Or is this done frontend??
-        dd($request->all());
-        $userProfile->first_name = $request->get('first_name');
-        $userProfile->last_name = $request->get('last_name');
-        $userProfile->bio = $request->get('bio');
-        $userProfile->location = $request->get('location');
-        $userProfile->interests = $request->get('interests');
-        $userProfile->pronoun = $request->get('pronoun');
-        $userProfile->dob = $request->get('dob');
-        $userProfile->website = $request->get('website');
-        $userProfile->twitter = $request->get('twitter');
-        
-        return $userProfile->save();
-    }
+        if ($profile->save())
+        {
+            return [
+                'status' => 'success',
+                'result' => [
+                    'profileId' => $profile->id,
+                ]
+            ];
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\UserProfile  $userProfile
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserProfile $userProfile)
-    {
-        //
+        return [
+            'status' => 'error'
+        ];
     }
 }
