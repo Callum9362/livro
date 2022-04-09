@@ -15,8 +15,12 @@ class BooksSeeder extends Seeder
     {
         \App\Models\Author::factory(25)->create();
 
-        \App\Models\Book::factory(25)->create()->each(function ($book) { 
+        \App\Models\Book::factory(25)->create()->each(function ($book) 
+        { 
             $book->authors()->attach(\App\Models\Author::inRandomOrder()->take(rand(1, 3))->get());
+            \App\Models\BookEdition::factory(rand(1, 5))->create(['book_id' => $book->id]);
         });
+
+
     }
 }
