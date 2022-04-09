@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserProfileController;
@@ -29,4 +30,8 @@ Route::prefix('profile')->name('profile.')->group(function () {
 
     // Edit a given profile
     Route::post('edit/{profile}', [UserProfileController::class, 'update'])->name('update');
+});
+
+Route::prefix('books')->name('books.')->group(function () {
+    Route::get('', [BookController::class, 'index'])->name('index');
 });
