@@ -1,8 +1,9 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
 import LatestUsers from '@/components/LatestUsers'
+import LatestBooks from '@/components/LatestBooks'
 
-const Home = ({ users }) => {
+const Home = ({ users, books }) => {
     return (
         <AppLayout>
 
@@ -40,7 +41,7 @@ const Home = ({ users }) => {
                 <div id="right-column" className="basis-3/4">
                     <h6 className="text-center">Your Feed</h6>
                     <div id="feed" className="pt-3 text-center">
-                        <span>The feed will go here. It will contain updates from authors, book release dates, changes to lists you follow</span>
+                        <LatestBooks books={books}/>
                     </div>
                 </div>
             </div>
@@ -52,9 +53,13 @@ export async function getServerSideProps()
 {
     const result = await fetch('http://localhost:8000/api/profile?limit=5');
     const userProfiles = await result.json();
+    const booksResult = await fetch('http://localhost:8000/api/books?limit=5');
+    const latestBooks = await booksResult.json();
+
     return {
         props: {
-            users: userProfiles
+            users: userProfiles,
+            books: latestBooks
         }
     }
 }
