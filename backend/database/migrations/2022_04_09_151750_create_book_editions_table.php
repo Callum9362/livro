@@ -16,12 +16,14 @@ class CreateBookEditionsTable extends Migration
         Schema::create('book_editions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('book_id');
+            $table->unsignedBigInteger('publisher_id');
             $table->string('isbn10');
             $table->string('isbn13');
             $table->integer('num_pages');
             $table->date('published_date');
             $table->string('language');
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');
             $table->timestamps();
         });
     }
