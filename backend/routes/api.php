@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\BookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\BookGenreController;
+use App\Http\Controllers\BookController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +36,8 @@ Route::prefix('profile')->name('profile.')->group(function () {
 
 Route::prefix('books')->name('books.')->group(function () {
     Route::get('', [BookController::class, 'index'])->name('index');
+});
+
+Route::prefix('genres')->name('genres.')->group(function () {
+    Route::get('{slug:slug}', [BookGenreController::class, 'show'])->name('show');
 });
