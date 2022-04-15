@@ -18,4 +18,9 @@ class Book extends Model
     {
         return $this->hasMany(BookEdition::class);
     }
+
+    public function publishers()
+    {
+        return $this->belongsToMany(Publisher::class);
+    }
 }

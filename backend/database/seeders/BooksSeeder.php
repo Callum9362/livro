@@ -13,13 +13,17 @@ class BooksSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Author::factory(25)->create();
+        \App\Models\Author::factory(200)->create();
+        \App\Models\Publisher::factory(20)->create();
 
-        \App\Models\Book::factory(25)->create()->each(function ($book) 
+        \App\Models\Book::factory(1000)->create()->each(function ($book) 
         { 
-            $book->authors()->attach(\App\Models\Author::inRandomOrder()->take(rand(1, 3))->get());
+            $book->authors()->attach(\App\Models\Author::inRandomOrder()->take(rand(1, 5))->get());
+            $book->publishers()->attach(\App\Models\Publisher::inRandomOrder()->take(rand(1, 2))->get());
             \App\Models\BookEdition::factory(rand(1, 5))->create(['book_id' => $book->id]);
         });
+
+        
 
 
     }

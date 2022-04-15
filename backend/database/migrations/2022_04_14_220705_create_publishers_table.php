@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Publisher extends Migration
+class CreatePublishersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,8 +17,8 @@ class Publisher extends Migration
             $table->id();
             $table->string('name');
             $table->string('website');
-            $table->integer('established_date');
-            $table->date('active');
+            $table->date('established_date');
+            $table->boolean('active');
             $table->timestamps();
         });
     }
