@@ -24,8 +24,8 @@
 
 ### Genre
 - Name
-- Descrption 
-- Ratings
+- Descrption
+- Slug 
 
 ---
 
