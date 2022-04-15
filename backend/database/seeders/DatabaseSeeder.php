@@ -13,12 +13,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\User::factory(1)->create([
+            'username' => 'Callum',
+            'email' => 'callum.gill.1993.cg@gmail.com',
+        ])->each(function ($user) { 
+            \App\Models\UserProfile::factory(1)->create(['user_id' => $user->id]);
+        });
+
         \App\Models\User::factory(10)->create()->each(function ($user) { 
             \App\Models\UserProfile::factory(1)->create(['user_id' => $user->id]);
         });
 
         $this->call([
-            BooksSeeder::class,   
+            GenreSeeder::class,
+            BooksSeeder::class  
         ]);
     }
 }
