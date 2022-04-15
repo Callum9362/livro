@@ -39,5 +39,6 @@ Route::prefix('books')->name('books.')->group(function () {
 });
 
 Route::prefix('genres')->name('genres.')->group(function () {
+    Route::get('', [BookGenreController::class, 'index'])->name('index');
     Route::get('{slug:slug}', [BookGenreController::class, 'show'])->name('show');
 });
