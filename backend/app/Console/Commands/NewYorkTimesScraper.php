@@ -50,7 +50,9 @@ class NewYorkTimesScraper extends Command
             {
                 $bookTitle = (string) Str::of($book['title'])->title();
                 $authors = Str::of($book['author'])->before('et al')->explode(" and ")->toArray();
-                $this->info($bookTitle." By ".implode(", " , $authors));
+                $publisher = $book['publisher'];
+                $editions = $book['isbns'];
+                $this->info($bookTitle." By ".implode(", " , $authors). " Published By " . $publisher);
             }
         }
         return 0;
