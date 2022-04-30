@@ -16,4 +16,10 @@ class BookController extends Controller
         }
         return Book::latest()->limit($limit)->get();
     }
+
+    public function show(Request $request, $bookID)
+    {
+        $book = Book::with(['authors', 'publishers', 'editions', 'genres'])->findOrFail($bookID);
+        return $book;
+    }
 }

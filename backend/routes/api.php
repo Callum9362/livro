@@ -36,6 +36,7 @@ Route::prefix('profile')->name('profile.')->group(function () {
 
 Route::prefix('books')->name('books.')->group(function () {
     Route::get('', [BookController::class, 'index'])->name('index');
+    Route::get('/{id}', [BookController::class, 'show'])->name('show');
 });
 
 Route::prefix('genres')->name('genres.')->group(function () {
