@@ -1,0 +1,6 @@
+
+
+.genreBtn {
+    @apply my-1 ml-1 inline-block rounded bg-blue-700 p-1 text-sm text-white;
+}
+  
